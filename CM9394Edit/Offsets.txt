@@ -1,0 +1,192 @@
+﻿----------------------OTHER-----------------
+ 
+Age
+ 
+From 0000E390x06
+To 0000EAD0x09
+ 
+-------------------SKILLS-------------------
+ 
+Passing
+ 
+From 00006F50x06
+To 00007690x09
+ 
+Tackling
+ 
+From 00007690x0A
+To 00007DD0x0D
+ 
+Pace
+ 
+From 00007DD0x0E
+To 00008520x01 
+ 
+Heading
+ 
+From 00008520x02
+To 00008C60x05
+ 
+Flair
+ 
+From 00008C60x06
+To 000093A0x09
+ 
+Creativity
+ 
+From 000093A0x0A
+To 00009AE0x0D
+ 
+Agility
+ 
+From 0000B0B0x0A
+To 0000B7F0x0D
+ 
+Influence
+ 
+From 0000BF40x02
+To 0000C680x05
+ 
+Stamina
+ 
+From 000107E0x0A
+To 00010F20x0D
+ 
+Strength (Unknown 1)  [0-20]
+
+A232 - A975  
+
+Fitness [0-100]
+
+100A6 - 107E9
+
+Weeks not available [0-255]
+
+F962 - 100A5
+
+Illness [0-27]
+
+F21E - F961
+
+Morale (Unknown 5) [0-255] 
+
+D50E - DC51
+
+----------------SPECIAL SKILLS--------------
+ 
+Current Skill
+ 
+From 00006810x02
+To 00006F50x05
+ 
+Potential Skill
+ 
+From 0000A970x06
+To 0000B0B0x09
+ 
+Goalscoring
+ 
+From 00009AE0x0E
+To 0000A230x01
+ 
+ 
+POSITION:
+ 
+A R     : 18
+A L     : 28
+A RL    : 38
+A C     : 48 / C8
+A RC    : 58
+A LC    : 68 / E8
+A RLC   : 78
+ 
+M R     : 14
+M L     : 24
+M RL    : 34
+M C     : 44 / C4
+M RC    : 54 / D4
+M LC    : 64 / E4
+M RLC   : 74
+ 
+D R     : 12 / 92
+D L     : 22 / A2
+D RL    : 32
+D C     : 42 / C2
+D RC    : 52 / D2
+D LC    : 62
+D RLC   : 72
+ 
+MA R    : 1C / 9C
+MA L    : AC
+MA RL   : BC
+MA C    : CC
+MA RC   : DC
+MA LC   : EC
+MA RLC  : FC
+ 
+DA R    : 1A
+DA L    : 2A
+DA RL   : 3A
+DA C    : 4A
+DA RC   : 5A / DA
+DA LC   : 6A
+DA RLC  : 7A
+ 
+DM R    : 16
+DM L    : 26 / A6
+DM RL   : 36
+DM C    : 46
+DM RC   : 56
+DM LC   : 66 / E6
+DM RLC  : 76
+ 
+DMA R   : 1E
+DMA L   : 2E
+DMA RL  : 3E
+DMA C   : 4E
+DMA RC  : 5E
+DMA LC  : 6E
+DMA RLC : 7E
+ 
+G : 81 / 01
+ 
+GDMA RLC: 7F
+ 
+ 
+START:
+ 
+Dalian (1): 00004B00x02
+Earl (2):   00004B00x06
+ 
+ 
+[skip tre plasser]
+02 - - - 06 - - - 0A...
+ 
+ 
+-----------------TEAMS----------------------
+ 
+Offset for Klubb-bytte:
+ 
+EADA
+ 
+Aston Villa: 0A
+Norwich : 0D
+MAN: 05
+ 
+ 
+Offset for CMENGV2-lagliste:
+ 
+4E97 -  575F
+ 
+Offset for fornavn:
+ 
+5767 - 739B
+ 
+Offset for etternavn:
+ 
+73A7 - CB9E
+
+INDEX FOR KLUBBENE:
+
+
+2C6E2
