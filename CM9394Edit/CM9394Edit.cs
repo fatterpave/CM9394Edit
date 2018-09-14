@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace CM9394Edit
 {
@@ -307,6 +308,24 @@ namespace CM9394Edit
             {
                 MessageBox.Show("No extended name list for this savegame. You need to add a text file named <savegame>_extendednames.txt");
             }
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Title = "Save CM9394 Data";
+            sfd.Filter = "CM9394 Data | *.json";
+            if(sfd.ShowDialog()==DialogResult.OK)
+            {
+                ExportData exportData = new ExportData();
+                exportData.Clubs = du.Clubs;
+                exportData.Players = du.Players;
+                string output = JsonConvert.SerializeObject(exportData);
+                string filename = sfd.FileName;
+                File.WriteAllText(filename, output);
+            }
+            
+
         }
     }
     
