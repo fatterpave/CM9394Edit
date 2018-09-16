@@ -330,15 +330,24 @@ namespace CM9394Edit
 
         private void btnPlayerHistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            string history = "";
+            
+            PlayerHistoryForm playerHistoryForm = new PlayerHistoryForm();
+            playerHistoryForm.Text = "History for " + du.GetPlayer(index).FirstName + " " + du.GetPlayer(index).SurName;
+
             List<DataUtil.PlayerHistory> playerHistory = du.PlayerHistoryList(index);
+
             foreach (var ph in playerHistory)
             {
-                history += "Year: " + ph.Year + " club: " + ph.ClubId + " apps: " + ph.Apps + " goals: " + ph.Goals +
-                           "\n";
+                ListViewItem item = new ListViewItem("19" + ph.Year);
+                item.SubItems.Add(du.GetClubName(ph.ClubId));
+                item.SubItems.Add(""+ ph.Apps);
+                item.SubItems.Add(""+ ph.Goals);
+                item.SubItems.Add(string.Format("{0:N2}",ph.Avg));
+
+                playerHistoryForm.listViewPlHist.Items.Add(item);
             }
 
-            MessageBox.Show(history);
+            playerHistoryForm.ShowDialog(this);
         }
     }
     

@@ -5,6 +5,8 @@ using System.Text;
 using System.IO;
 using System.Windows.Forms;
 using System.Reflection;
+using Newtonsoft.Json.Linq;
+using DirectoryInfo = System.IO.DirectoryInfo;
 
 namespace CM9394Edit
 {
@@ -17,6 +19,7 @@ namespace CM9394Edit
         private string extendednameFilePath;
         private Dictionary<int,string> clubNames = new Dictionary<int, string>();
         private Dictionary<int,List<PlayerHistory>> playerHistory = new Dictionary<int, List<PlayerHistory>>();
+        private Dictionary<int, Player> playerMap = new Dictionary<int, Player>();
 
         public DataUtil(string path,string extendednamefilePath)
         {
@@ -26,6 +29,7 @@ namespace CM9394Edit
             GetNames();
             GetPlayers();
             GetPositions();
+            GetPlayerHistory();
         }
 
         public void SavePlayer(int index, int age, string club, int passing, int tackling, int pace, int heading, int flair, int creativity, int stamina, int influence, int agility, int strength, int fitness, int illness, int weeks, int morale, int goals, int currSkill, int potSkill,Position pos)
@@ -238,6 +242,58 @@ namespace CM9394Edit
             }
         }
 
+        private void GetPlayerHistory()
+        {
+            BinaryReader br = null;
+            string hex = "";
+            try
+            {
+
+                DirectoryInfo dir = new DirectoryInfo(path);
+                br = new BinaryReader(File.OpenRead(dir.Parent.FullName+"\\PLHISTV2"));
+
+                for (int i = 0; i < 1860; i++)
+                {
+                    List<PlayerHistory> plhist = new List<PlayerHistory>();                   
+
+                    for (int j = (i*133)+1; j < (i * 133)+133; j++)
+                    {
+                        PlayerHistory currentHistory = new PlayerHistory();
+
+                        br.BaseStream.Position = j;
+                        hex = br.ReadByte().ToString("X2");
+                        currentHistory.Year = Convert.ToInt32(hex,16);
+                        if (currentHistory.Year == 0) break;                       
+
+                        br.BaseStream.Position = ++j;
+                        hex = br.ReadByte().ToString("X2");
+                        currentHistory.ClubId = Convert.ToInt32(hex, 16);
+
+                        br.BaseStream.Position = ++j;
+                        hex = br.ReadByte().ToString("X2");
+                        currentHistory.Apps = Convert.ToInt32(hex, 16);
+
+                        br.BaseStream.Position = ++j;
+                        hex = br.ReadByte().ToString("X2");
+                        currentHistory.Goals = Convert.ToInt32(hex, 16);
+
+                        br.BaseStream.Position = (j=j+2);
+                        hex = br.ReadByte().ToString("X2");
+                        currentHistory.Avg = currentHistory.Apps>0? (double)Convert.ToInt32(hex,16) / (double)currentHistory.Apps : 0;
+
+                        plhist.Add(currentHistory);
+                    }
+
+                    playerHistory.Add(i,plhist);
+                }
+
+                br.Close();
+            }
+            catch (Exception e)
+            {
+                System.Windows.Forms.MessageBox.Show(e.ToString());
+            }
+        }
 
         private void GetPlayers()
         {
@@ -253,7 +309,7 @@ namespace CM9394Edit
 
                     p.Id = i+1;
                     p.FirstName = playerNames[i].firstName;
-                    p.SurName = playerNames[i].surName;
+                    p.SurName = playerNames[i].surName;               
 
                     br.BaseStream.Position = HexAddress.AGE_FROM + i;
                     hex = br.ReadByte().ToString("X2");
@@ -351,6 +407,8 @@ namespace CM9394Edit
                     p.Club = GetClubNameFromHex(hex);
                     //Console.WriteLine(hex);
                     players.Add(p);
+
+                    playerMap.Add(p.Id, p);
                 }
 
                 br.Close();
@@ -488,6 +546,16 @@ namespace CM9394Edit
             return playerHistory[index]; 
         }
 
+        public Player GetPlayer(int id)
+        {
+            return playerMap[id+1];
+        }
+
+        public string GetClubName(int id)
+        {
+            return clubNames[id];
+        }
+
         public struct Club
         {
             public int Id;
@@ -507,7 +575,7 @@ namespace CM9394Edit
             public int ClubId;
             public int Apps;
             public int Goals;
-            public decimal Avg;
+            public double Avg;
         }
     }
 }

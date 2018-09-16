@@ -48,6 +48,9 @@ namespace CM9394Edit
         public static int CLUB_INDEX_CMEDV2_FROM = 0x2C6E2;
         public static int CLUB_INDEX_CMEDV2_TO = 0x2C76D;
         public static int CLUB = 0xEADA;
+
+        public static int PLAYERHIST_FROM;
+        public static int PLAYERHIST_OFFSET_SIZE = 133;
     }
 
 }
