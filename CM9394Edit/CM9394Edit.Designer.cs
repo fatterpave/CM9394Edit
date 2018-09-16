@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -131,10 +131,11 @@
             this.colPotSkill = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabOptions = new System.Windows.Forms.TabPage();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnLoadExtendedNames = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btnExport = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnLoadExtendedNames = new System.Windows.Forms.Button();
+            this.btnPlayerHistory = new System.Windows.Forms.LinkLabel();
             this.groupBoxPosition.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.tabPlayer.SuspendLayout();
@@ -167,8 +168,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numMaxAgeSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabOptions.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -463,6 +464,7 @@
             // 
             // tabPlayer
             // 
+            this.tabPlayer.Controls.Add(this.btnPlayerHistory);
             this.tabPlayer.Controls.Add(this.label30);
             this.tabPlayer.Controls.Add(this.btnSuperman);
             this.tabPlayer.Controls.Add(this.btnGoto);
@@ -1226,8 +1228,8 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colNo,
@@ -1242,8 +1244,8 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(490, 321);
             this.dataGridView1.TabIndex = 0;
@@ -1315,6 +1317,26 @@
             this.tabOptions.Text = "Options";
             this.tabOptions.UseVisualStyleBackColor = true;
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.btnExport);
+            this.groupBox5.Location = new System.Drawing.Point(8, 73);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(144, 60);
+            this.groupBox5.TabIndex = 1;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Export data";
+            // 
+            // btnExport
+            // 
+            this.btnExport.Location = new System.Drawing.Point(32, 19);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(75, 23);
+            this.btnExport.TabIndex = 0;
+            this.btnExport.Text = "Export";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.btnLoadExtendedNames);
@@ -1335,25 +1357,16 @@
             this.btnLoadExtendedNames.UseVisualStyleBackColor = true;
             this.btnLoadExtendedNames.Click += new System.EventHandler(this.btnLoadExtendedNames_Click);
             // 
-            // groupBox5
+            // btnPlayerHistory
             // 
-            this.groupBox5.Controls.Add(this.btnExport);
-            this.groupBox5.Location = new System.Drawing.Point(8, 73);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(144, 60);
-            this.groupBox5.TabIndex = 1;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Export data";
-            // 
-            // btnExport
-            // 
-            this.btnExport.Location = new System.Drawing.Point(32, 19);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(75, 23);
-            this.btnExport.TabIndex = 0;
-            this.btnExport.Text = "Export";
-            this.btnExport.UseVisualStyleBackColor = true;
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            this.btnPlayerHistory.AutoSize = true;
+            this.btnPlayerHistory.Location = new System.Drawing.Point(24, 123);
+            this.btnPlayerHistory.Name = "btnPlayerHistory";
+            this.btnPlayerHistory.Size = new System.Drawing.Size(90, 13);
+            this.btnPlayerHistory.TabIndex = 44;
+            this.btnPlayerHistory.TabStop = true;
+            this.btnPlayerHistory.Text = "See player history";
+            this.btnPlayerHistory.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.btnPlayerHistory_LinkClicked);
             // 
             // CM9394Edit
             // 
@@ -1404,8 +1417,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numMaxAgeSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabOptions.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1518,6 +1531,7 @@
         private System.Windows.Forms.Button btnLoadExtendedNames;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.LinkLabel btnPlayerHistory;
     }
 }
 

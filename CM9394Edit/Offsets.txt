@@ -342,11 +342,11 @@ South Liverpool
 
 PLHIST:
 
-Første linje tilsvarer spiller med ID=0
+Første linje tilsvarer spiller med ID=0, 133 plasser er gitt historie pr.spiller. Aller første er 0, skip den
 
-00 56=ÅR (1986) 07=ID PÅ KLUBB (7) 01=APPS (1) 00=GOALS (0) 00 05 = SNITT? (5.00)
+00 56=ÅR (1986) 07=ID PÅ KLUBB (7) 01=APPS (1) 00=GOALS (0) 00 05 = SNITT => 05 = 5 / antall kamper (1) = 5.00
 (neste linje) 57=ÅR 07 08 00 
 
-SNITT: 00 2E 
+EKS.SNITT: 00 2E regnes ut slik: den siste verdien delt på antall kamper => 2E (46) / 8 kamper = 5.75
 
 (neste år) 58 07 11

@@ -15,6 +15,8 @@ namespace CM9394Edit
         private List<Player> players = new List<Player>();
         private string path;
         private string extendednameFilePath;
+        private Dictionary<int,string> clubNames = new Dictionary<int, string>();
+        private Dictionary<int,List<PlayerHistory>> playerHistory = new Dictionary<int, List<PlayerHistory>>();
 
         public DataUtil(string path,string extendednamefilePath)
         {
@@ -205,6 +207,7 @@ namespace CM9394Edit
 
         private void GetClubs()
         {
+            clubNames = new Dictionary<int, string>();
             BinaryReader br = null;
             string hex = "";
             int j = 0;
@@ -220,7 +223,9 @@ namespace CM9394Edit
                     Club c = new Club();
                     c.HexAddress = hex;
                     c.Name = GetResource("teams.txt")[j];
-                    
+                    c.Id = j;
+                    //Console.WriteLine(">>>> id: "+c.Id+" name: "+c.Name+"\n");
+                    clubNames.Add(c.Id,c.Name);
                     clubs.Add(c);
                     j++;
                 }
@@ -478,8 +483,14 @@ namespace CM9394Edit
             set { players = value; }
         }
 
+        public List<PlayerHistory> PlayerHistoryList(int index)
+        {
+            return playerHistory[index]; 
+        }
+
         public struct Club
         {
+            public int Id;
             public string HexAddress;
             public string Name;
         }
@@ -488,6 +499,15 @@ namespace CM9394Edit
         {
             public string firstName;
             public string surName;
+        }
+
+        public struct PlayerHistory
+        {
+            public int Year;
+            public int ClubId;
+            public int Apps;
+            public int Goals;
+            public decimal Avg;
         }
     }
 }

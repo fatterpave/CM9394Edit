@@ -327,6 +327,19 @@ namespace CM9394Edit
             
 
         }
+
+        private void btnPlayerHistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string history = "";
+            List<DataUtil.PlayerHistory> playerHistory = du.PlayerHistoryList(index);
+            foreach (var ph in playerHistory)
+            {
+                history += "Year: " + ph.Year + " club: " + ph.ClubId + " apps: " + ph.Apps + " goals: " + ph.Goals +
+                           "\n";
+            }
+
+            MessageBox.Show(history);
+        }
     }
     
 }
