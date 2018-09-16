@@ -190,3 +190,163 @@ INDEX FOR KLUBBENE:
 
 
 2C6E2
+
+
+_____________
+
+0 - indeksert liste:
+
+
+Aston Villa
+Manchester United
+Norwich City
+Sheffield Wednesday     
+Coventry City
+Blackburn Rovers
+Queens Park Rangers
+Ipswich Town
+Tottenham Hotspur
+Manchester City
+Arsenal 
+Chelsea 
+Southampton
+Leeds United
+Liverpool
+Wimbledon
+Everton 
+West Ham
+Crystal Palace
+Newcastle United
+Middlesbrough
+Nottingham Forest
+Leicester City
+Sheffield United
+Millwall
+Oldham Athletic      
+Portsmouth    
+Tranmere Rovers
+Port Vale
+Swindon Town
+Derby City
+Wolverhampton
+Charlton Athletic
+Bolton Wanderers      
+Southend United
+Barnsley
+West Bromwich Albion     
+Sunderland
+Notts County
+Stoke City
+Luton Town
+Bristol City
+Brentford
+Reading 
+Bristol Rovers
+Grimsby Town
+Blackpool
+Birmingham City  
+Stockport City    
+Cardiff City
+Burnley 
+York City  
+Rotherham United
+Watford 
+Oxford United
+Bradford City
+Peterborough United
+Hull City  
+Swansea City
+Bournemouth   
+Plymouth Argyle
+Hartlepool United  
+Fulham  
+Preston North End
+Exeter City
+Colchester United   
+Cambridge United   
+Scunthorpe United   
+Chester City
+Huddersfield Town
+Barnet  
+Brighton
+Leyton Orient
+Wrexham 
+Torquay United
+Doncaster Rovers
+Scarborough   
+Crewe Alexandria
+Rochdale
+Wycombe Wanderers   
+Lincoln 
+Bury    
+Wigan   
+Walsall 
+Carlisle
+Mansfield   
+Darlington    
+Halifax 
+Hereford
+Shrewsbury    
+Gillingham    
+Northampton    
+Aldershot
+Newport 
+Maidstone     
+Boston United    
+Sutton United
+Runcorn 
+Telford United
+Bath City     
+Cheltenham     
+Kidderminster
+Stafford
+Weymouth
+Redbridge
+ettering
+Northwich
+Nuneaton
+Wealdstone    
+Welling 
+Frickley
+Gateshead
+Bangor  
+Macclesfield    
+Enfield 
+Caernarfon    
+Marine  
+Chorley 
+Fisher  
+Aylesbury     
+Chelmsford    
+Merthyr 
+Halesowen
+Stourbridge   
+Dorchester    
+Dover Athletic
+Altrincham    
+Bishop Auckland    
+Whitley Bay   
+Chesterfield  
+Yeovil  
+Slough  
+Farnborough   
+Windsor 
+Hayes   
+Stalybridge   
+Accrington    
+Knowsley
+St Helens     
+South Liverpool
+
+===  PLAYER HISTORY ======
+
+PLHIST:
+
+Første linje tilsvarer spiller med ID=0
+
+00 56=ÅR (1986) 07=ID PÅ KLUBB (7) 01=APPS (1) 00=GOALS (0) 00 05 = SNITT? (5.00)
+(neste linje) 57=ÅR 07 08 00 
+
+SNITT: 00 2E 
+
+(neste år) 58 07 11
