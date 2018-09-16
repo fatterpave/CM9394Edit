@@ -523,6 +523,21 @@ namespace CM9394Edit
             return new List<string>();
         }
 
+        public List<Player> GetPlayersForClub(string clubName)
+        {
+            List<Player> playerList = new List<Player>();
+            foreach (var player in players)
+            {
+                if (player.Club.Equals(clubName, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    player.PlayerHistory = PlayerHistoryList(player.Id - 1);
+                    playerList.Add(player);
+                }
+            }
+
+            return playerList;
+        }
+
         public List<Club> Clubs
         {
             get { return clubs; }

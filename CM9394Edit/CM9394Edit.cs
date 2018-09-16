@@ -317,9 +317,51 @@ namespace CM9394Edit
             sfd.Filter = "CM9394 Data | *.json";
             if(sfd.ShowDialog()==DialogResult.OK)
             {
-                ExportData exportData = new ExportData();
-                exportData.Clubs = du.Clubs;
-                exportData.Players = du.Players;
+                CM94Data exportData = new CM94Data();
+
+                Division div0 = new Division();
+                div0.Id = 0;
+                div0.Name = "Premier League";
+                div0.Clubs = new List<Club>();
+                Division div1 = new Division();
+                div1.Id = 1;
+                div1.Name = "Championship";
+                div1.Clubs = new List<Club>();
+                Division div2 = new Division();
+                div2.Id = 2;
+                div2.Name = "League One";
+                div2.Clubs = new List<Club>();
+                Division div3 = new Division();
+                div3.Id = 3;
+                div3.Name = "League Two";
+                div3.Clubs = new List<Club>();
+                Division div4 = new Division();
+                div4.Id = 4;
+                div4.Name = "Non League";
+                div4.Clubs = new List<Club>();
+
+                for (int i = 0; i < du.Clubs.Count; i++)
+                {
+                    Club club = new Club();
+                    club.Id = du.Clubs[i].Id;
+                    club.Name = du.Clubs[i].Name;
+                    club.Players = du.GetPlayersForClub(du.Clubs[i].Name);
+
+                    if(i<20) div0.Clubs.Add(club);
+                    else if(i>=20 && i<40) div1.Clubs.Add(club);
+                    else if(i>=40 && i<60) div2.Clubs.Add(club);
+                    else if(i>=60 && i<80) div3.Clubs.Add(club);
+                    else div4.Clubs.Add(club);
+                }
+
+                exportData.Divisions = new List<Division>();
+                exportData.Divisions.Add(div0);
+                exportData.Divisions.Add(div1);
+                exportData.Divisions.Add(div2);
+                exportData.Divisions.Add(div3);
+                exportData.Divisions.Add(div4);
+
+
                 string output = JsonConvert.SerializeObject(exportData);
                 string filename = sfd.FileName;
                 File.WriteAllText(filename, output);

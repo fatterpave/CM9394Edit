@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
@@ -31,6 +32,8 @@ namespace CM9394Edit
         private int goalscoring;
         private Position position;
         private string club;
+
+        public List<DataUtil.PlayerHistory> PlayerHistory { get; set; }
 
         public int Id { get { return id; } set { id = value; } }
         public string FirstName { get { return firstName; } set { firstName = value; } }

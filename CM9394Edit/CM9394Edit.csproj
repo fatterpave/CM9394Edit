@@ -55,6 +55,7 @@
     <Compile Include="CM9394Edit.Designer.cs">
       <DependentUpon>CM9394Edit.cs</DependentUpon>
     </Compile>
+    <Compile Include="CM94Data.cs" />
     <Compile Include="DataUtil.cs" />
     <Compile Include="ExportData.cs" />
     <Compile Include="HexAddress.cs" />
